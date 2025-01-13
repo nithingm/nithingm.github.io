@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Interactive Timeline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 3%; /* Adjusted to position behind icons */
+            width: 4px;
+            height: 100%;
+            background: #ddd;
+            z-index: 1;
+        }
+
+        .event {
+            position: relative;
+            margin: 20px 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .event .icon {
+            width: 50px;
+            height: 50px;
+            background-color: #2196F3;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            margin-right: 20px;
+            z-index: 2;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .event .icon:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .event .content {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            width: 45%;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .event .content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .event .date {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .event .title {
+            font-size: 16px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .event .details {
+            display: none;
+            color: #444;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .event:hover .details {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline">
+        <div class="event">
+            <div class="icon" title="Master's in Machine Learning">🤖</div>
+            <div class="content">
+                <div class="date">2023-2025</div>
+                <div class="title">Master's in Machine Learning</div>
+                <div class="details">Pursuing a Master's at the University of Arizona, specializing in Machine Learning with a GPA of 3.89/4.0.</div>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="icon" title="Mathematics Coach at BYJU'S">📐</div>
+            <div class="content">
+                <div class="date">2017-2023</div>
+                <div class="title">Mathematics Coach at BYJU'S</div>
+                <div class="details">Taught 3,000+ IIT-JEE aspirants, developed curriculum, and led math faculty recruitment across 12 centers.</div>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="icon" title="Co-Founder of Gulpp">🍔</div>
+            <div class="content">
+                <div class="date">2015-2017</div>
+                <div class="title">Co-Founder of Gulpp</div>
+                <div class="details">Founded a food tech startup focusing on efficient food delivery systems and innovative marketing campaigns.</div>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="icon" title="BITS Pilani Graduation">⚙️</div>
+            <div class="content">
+                <div class="date">2010-2014</div>
+                <div class="title">BITS Pilani Graduation</div>
+                <div class="details">Completed B.E. in Mechanical Engineering with a CGPA of 6.46/10.</div>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="icon" title="High School Achievements">🎓</div>
+            <div class="content">
+                <div class="date">2008-2010</div>
+                <div class="title">High School Achievements</div>
+                <div class="details">Achieved 94.2% in Class X and 92.2% in Class XII at Marian Senior Secondary School.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

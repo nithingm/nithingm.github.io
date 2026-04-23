@@ -3,1041 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nithin George Mathew | Jack of All Trades, Mastering a Few</title>
-    <meta
-        name="description"
-        content="Portfolio of Nithin George Mathew: data analytics, data science, machine learning, AI engineering, music, and trivia brought together through a clear story."
-    >
+    <title>Nithin George Mathew | Connected Map</title>
+    <meta name="description" content="Interactive portfolio of Nithin George Mathew across machine learning, AI engineering, math teaching, analytics, music, trivia, and art.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #f7f1e8;
-            --surface: rgba(255, 250, 244, 0.82);
-            --surface-strong: #fffaf3;
-            --text: #182126;
-            --muted: #556069;
-            --line: rgba(24, 33, 38, 0.12);
-            --accent: #d46a2e;
-            --accent-soft: rgba(212, 106, 46, 0.14);
-            --accent-deep: #8f3c0a;
-            --teal: #0f6c66;
-            --shadow: 0 24px 70px rgba(40, 31, 20, 0.12);
-            --radius-xl: 28px;
-            --radius-lg: 20px;
-            --radius-md: 14px;
-            --max-width: 1180px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Manrope", sans-serif;
-            color: var(--text);
-            background:
-                radial-gradient(circle at top left, rgba(212, 106, 46, 0.22), transparent 28%),
-                radial-gradient(circle at top right, rgba(15, 108, 102, 0.14), transparent 24%),
-                linear-gradient(180deg, #fbf7f1 0%, #f7f1e8 36%, #efe7dc 100%);
-            min-height: 100vh;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            background-image:
-                linear-gradient(rgba(24, 33, 38, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(24, 33, 38, 0.03) 1px, transparent 1px);
-            background-size: 44px 44px;
-            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 92%);
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .page-shell {
-            width: min(calc(100% - 2rem), var(--max-width));
-            margin: 0 auto;
-        }
-
-        .site-nav {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            backdrop-filter: blur(18px);
-            background: rgba(247, 241, 232, 0.78);
-            border-bottom: 1px solid rgba(24, 33, 38, 0.08);
-        }
-
-        .site-nav-inner {
-            width: min(calc(100% - 2rem), var(--max-width));
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 0.95rem 0;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 0.85rem;
-            font-size: 0.94rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .brand-mark {
-            width: 2.3rem;
-            height: 2.3rem;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(135deg, var(--accent), #f3b463);
-            color: #fff;
-            font-weight: 800;
-            box-shadow: 0 14px 26px rgba(212, 106, 46, 0.28);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 1.1rem;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            font-size: 0.94rem;
-        }
-
-        .nav-links a:hover,
-        .nav-links a:focus-visible {
-            color: var(--text);
-        }
-
-        .nav-cta {
-            padding: 0.8rem 1.1rem;
-            border-radius: 999px;
-            background: var(--text);
-            color: #fff;
-            font-weight: 700;
-        }
-
-        main {
-            padding-bottom: 4rem;
-        }
-
-        section {
-            padding: 2.4rem 0;
-        }
-
-        .hero {
-            padding-top: 3.8rem;
-        }
-
-        .hero-panel {
-            display: grid;
-            grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.9fr);
-            gap: 1.4rem;
-            align-items: stretch;
-        }
-
-        .hero-copy,
-        .hero-aside,
-        .section-card,
-        .feature-card,
-        .timeline-card,
-        .signal-card,
-        .quote-card,
-        .footer-card {
-            background: var(--surface);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow);
-        }
-
-        .hero-copy {
-            padding: 2.4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-copy::after {
-            content: "";
-            position: absolute;
-            right: -7rem;
-            bottom: -7rem;
-            width: 18rem;
-            height: 18rem;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(15, 108, 102, 0.14), transparent 62%);
-        }
-
-        .eyebrow,
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.55rem;
-            padding: 0.45rem 0.8rem;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.72);
-            color: var(--accent-deep);
-            font-size: 0.78rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            margin: 1.1rem 0 1rem;
-            font-family: "Playfair Display", serif;
-            font-size: clamp(3rem, 6vw, 5.8rem);
-            line-height: 0.94;
-            letter-spacing: -0.04em;
-            max-width: 10ch;
-        }
-
-        .hero-lead {
-            max-width: 62ch;
-            color: var(--muted);
-            font-size: 1.08rem;
-            line-height: 1.75;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.9rem;
-            margin-top: 1.7rem;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.45rem;
-            min-height: 3rem;
-            padding: 0.85rem 1.25rem;
-            border-radius: 999px;
-            border: 1px solid var(--line);
-            font-weight: 700;
-            transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
-        }
-
-        .button:hover,
-        .button:focus-visible {
-            transform: translateY(-2px);
-        }
-
-        .button-primary {
-            background: var(--text);
-            color: #fff;
-            border-color: var(--text);
-        }
-
-        .button-secondary {
-            background: rgba(255, 255, 255, 0.7);
-        }
-
-        .hero-metrics {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--line);
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.9rem;
-        }
-
-        .metric {
-            padding: 0.3rem 0;
-        }
-
-        .metric-value {
-            font-size: clamp(1.7rem, 3vw, 2.4rem);
-            font-weight: 800;
-            letter-spacing: -0.05em;
-        }
-
-        .metric-label {
-            color: var(--muted);
-            font-size: 0.92rem;
-            line-height: 1.5;
-        }
-
-        .hero-aside {
-            padding: 1.3rem;
-            display: grid;
-            gap: 1rem;
-            align-content: start;
-        }
-
-        .hero-stack {
-            padding: 1.2rem;
-            border-radius: calc(var(--radius-xl) - 10px);
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(253, 244, 233, 0.95));
-            border: 1px solid rgba(24, 33, 38, 0.08);
-        }
-
-        .hero-stack h2,
-        .section-title,
-        .feature-card h3,
-        .timeline-card h3,
-        .signal-card h3,
-        .quote-card h3,
-        .footer-card h3 {
-            margin: 0;
-            font-size: 1.1rem;
-        }
-
-        .hero-stack p,
-        .section-intro,
-        .feature-card p,
-        .timeline-card p,
-        .signal-card p,
-        .quote-card p,
-        .footer-card p {
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        .discipline-list {
-            display: grid;
-            gap: 0.85rem;
-            margin-top: 1rem;
-        }
-
-        .discipline {
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            gap: 0.75rem;
-            align-items: center;
-        }
-
-        .discipline-name {
-            font-weight: 700;
-            min-width: 8.2rem;
-        }
-
-        .discipline-bar {
-            height: 0.55rem;
-            border-radius: 999px;
-            background: rgba(24, 33, 38, 0.08);
-            overflow: hidden;
-        }
-
-        .discipline-fill {
-            height: 100%;
-            border-radius: inherit;
-            background: linear-gradient(90deg, var(--accent), #efb86d);
-        }
-
-        .discipline-level {
-            font-size: 0.82rem;
-            color: var(--muted);
-            font-weight: 700;
-        }
-
-        .tag-cluster {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.7rem;
-            margin-top: 0.9rem;
-        }
-
-        .tag {
-            padding: 0.58rem 0.8rem;
-            border-radius: 999px;
-            background: rgba(15, 108, 102, 0.08);
-            color: var(--teal);
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-
-        .section-top {
-            display: flex;
-            align-items: end;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .section-title {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(2rem, 3.8vw, 3.4rem);
-            letter-spacing: -0.03em;
-            line-height: 1.02;
-            margin-top: 0.9rem;
-        }
-
-        .section-card {
-            padding: 1.9rem;
-        }
-
-        .story-grid,
-        .feature-grid,
-        .signals-grid,
-        .footer-grid {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .story-grid {
-            grid-template-columns: 1.2fr 0.8fr;
-        }
-
-        .story-copy {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .story-quote {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(1.7rem, 3vw, 2.7rem);
-            line-height: 1.14;
-            letter-spacing: -0.03em;
-            margin: 0;
-        }
-
-        .story-columns {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1rem;
-        }
-
-        .signal-list {
-            display: grid;
-            gap: 0.8rem;
-        }
-
-        .signal-item {
-            padding: 0.95rem 1rem;
-            border-radius: var(--radius-md);
-            background: rgba(255, 255, 255, 0.7);
-            border: 1px solid rgba(24, 33, 38, 0.07);
-        }
-
-        .signal-item strong {
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-
-        .feature-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .feature-card {
-            padding: 1.4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: "";
-            position: absolute;
-            inset: auto -3rem -5rem auto;
-            width: 9rem;
-            height: 9rem;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(212, 106, 46, 0.14), transparent 70%);
-        }
-
-        .card-topline {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .card-kicker {
-            font-size: 0.78rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--accent-deep);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 0.65rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .project-links a {
-            padding: 0.55rem 0.78rem;
-            border-radius: 999px;
-            background: rgba(24, 33, 38, 0.06);
-            font-size: 0.88rem;
-            font-weight: 700;
-        }
-
-        .timeline {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .timeline-card {
-            padding: 1.35rem;
-            display: grid;
-            grid-template-columns: 8rem 1fr;
-            gap: 1.1rem;
-            align-items: start;
-        }
-
-        .timeline-period {
-            font-size: 0.86rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--accent-deep);
-        }
-
-        .timeline-title {
-            margin: 0.15rem 0 0.45rem;
-            font-size: 1.2rem;
-        }
-
-        .signals-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .signal-card {
-            padding: 1.4rem;
-        }
-
-        .signal-pill {
-            display: inline-flex;
-            padding: 0.42rem 0.65rem;
-            border-radius: 999px;
-            margin-bottom: 0.85rem;
-            background: var(--accent-soft);
-            color: var(--accent-deep);
-            font-size: 0.78rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .quote-card {
-            padding: 1.7rem;
-            background: linear-gradient(135deg, rgba(24, 33, 38, 0.98), rgba(34, 48, 57, 0.96));
-            color: #f8f0e5;
-        }
-
-        .quote-card p {
-            color: rgba(248, 240, 229, 0.78);
-        }
-
-        .quote-card .story-quote {
-            color: #fff5e8;
-        }
-
-        .footer-grid {
-            grid-template-columns: 1.05fr 0.95fr;
-        }
-
-        .footer-card {
-            padding: 1.8rem;
-        }
-
-        .contact-list {
-            display: grid;
-            gap: 0.8rem;
-            margin-top: 1.2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 0.95rem 1rem;
-            border-radius: var(--radius-md);
-            background: rgba(255, 255, 255, 0.72);
-            border: 1px solid rgba(24, 33, 38, 0.08);
-        }
-
-        .contact-item span:last-child {
-            color: var(--muted);
-            font-size: 0.92rem;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(22px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .reveal.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 980px) {
-            .hero-panel,
-            .story-grid,
-            .footer-grid,
-            .signals-grid,
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline-card {
-                grid-template-columns: 1fr;
-                gap: 0.4rem;
-            }
-
-            .story-columns {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 720px) {
-            .site-nav-inner {
-                align-items: start;
-                flex-direction: column;
-            }
-
-            .nav-links {
-                justify-content: flex-start;
-            }
-
-            .hero {
-                padding-top: 2rem;
-            }
-
-            .hero-copy,
-            .hero-aside,
-            .section-card,
-            .feature-card,
-            .timeline-card,
-            .signal-card,
-            .quote-card,
-            .footer-card {
-                border-radius: 22px;
-            }
-
-            .hero-copy,
-            .section-card,
-            .quote-card,
-            .footer-card {
-                padding: 1.35rem;
-            }
-
-            .hero-metrics {
-                grid-template-columns: 1fr;
-            }
-
-            .discipline {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <nav class="site-nav">
-        <div class="site-nav-inner">
-            <a class="brand" href="#top" aria-label="Go to top">
-                <span class="brand-mark">N</span>
-                <span>Nithin George Mathew</span>
-            </a>
-            <div class="nav-links">
-                <a href="#story">Story</a>
-                <a href="#work">Work</a>
-                <a href="#journey">Journey</a>
-                <a href="#beyond">Beyond Work</a>
-                <a class="nav-cta" href="mailto:nithingm33@gmail.com">Let's collaborate</a>
-            </div>
-        </div>
-    </nav>
-
-    <main id="top">
-        <section class="hero">
-            <div class="page-shell hero-panel">
-                <div class="hero-copy reveal">
+<body data-page="home">
+    <div data-site-header></div>
+    <main class="site-main">
+        <section class="page-hero">
+            <div class="page-shell hero-grid">
+                <article class="hero-copy reveal">
                     <span class="eyebrow">Jack of all trades, mastering a few</span>
-                    <h1>From data to models to stories people can use.</h1>
+                    <h1 class="hero-title">A playful map of how I think, teach, and build.</h1>
                     <p class="hero-lead">
-                        I work across data analytics, data science, machine learning, and AI engineering, then bring the same pattern-driven curiosity into music and trivia. My edge is not random variety. It is range with a point of view: learn fast, connect disciplines, and go deep where impact demands it.
+                        I move across analytics, data science, machine learning, AI engineering, math teaching, music, and curiosity-driven experiments. The point is not to collect labels. The point is to connect systems, then go deep where the signal matters most.
                     </p>
                     <div class="hero-actions">
-                        <a class="button button-primary" href="#work">See selected work</a>
-                        <a class="button button-secondary" href="https://github.com/nithingm" target="_blank" rel="noreferrer">GitHub</a>
-                        <a class="button button-secondary" href="https://www.linkedin.com/in/nithin-george-87583137/" target="_blank" rel="noreferrer">LinkedIn</a>
+                        <a class="button button-primary" href="work.html">Explore the work</a>
+                        <a class="button button-accent" href="about.html">Read the story</a>
+                        <a class="button" href="fun.html">See the fun side</a>
                     </div>
-                    <div class="hero-metrics">
-                        <div class="metric">
+                    <div class="stat-row three-grid">
+                        <article class="metric-card">
                             <div class="metric-value">3,000+</div>
-                            <div class="metric-label">students taught across high-stakes math programs</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">12</div>
-                            <div class="metric-label">centers supported through hiring and academic operations</div>
-                        </div>
-                        <div class="metric">
+                            <div class="metric-label">students taught through high-intensity math coaching</div>
+                        </article>
+                        <article class="metric-card">
                             <div class="metric-value">3.89</div>
-                            <div class="metric-label">GPA in a master's focused on machine learning</div>
-                        </div>
+                            <div class="metric-label">machine learning graduate GPA</div>
+                        </article>
+                        <article class="metric-card">
+                            <div class="metric-value">5</div>
+                            <div class="metric-label">featured project stories spanning ML, AI, data, and learning systems</div>
+                        </article>
                     </div>
-                </div>
-
-                <aside class="hero-aside reveal">
-                    <div class="hero-stack">
-                        <h2>Where I go deep</h2>
-                        <p>Broad enough to connect systems. Focused enough to ship real work.</p>
-                        <div class="discipline-list">
-                            <div class="discipline">
-                                <span class="discipline-name">Data Analytics</span>
-                                <div class="discipline-bar"><div class="discipline-fill" style="width: 84%"></div></div>
-                                <span class="discipline-level">Strong</span>
-                            </div>
-                            <div class="discipline">
-                                <span class="discipline-name">Data Science</span>
-                                <div class="discipline-bar"><div class="discipline-fill" style="width: 88%"></div></div>
-                                <span class="discipline-level">Strong</span>
-                            </div>
-                            <div class="discipline">
-                                <span class="discipline-name">Machine Learning</span>
-                                <div class="discipline-bar"><div class="discipline-fill" style="width: 92%"></div></div>
-                                <span class="discipline-level">Core</span>
-                            </div>
-                            <div class="discipline">
-                                <span class="discipline-name">AI Engineering</span>
-                                <div class="discipline-bar"><div class="discipline-fill" style="width: 89%"></div></div>
-                                <span class="discipline-level">Core</span>
-                            </div>
-                            <div class="discipline">
-                                <span class="discipline-name">Music</span>
-                                <div class="discipline-bar"><div class="discipline-fill" style="width: 66%"></div></div>
-                                <span class="discipline-level">Identity</span>
-                            </div>
-                            <div class="discipline">
-                                <span class="discipline-name">Trivia</span>
-                                <div class="discipline-bar"><div class="discipline-fill" style="width: 72%"></div></div>
-                                <span class="discipline-level">Fuel</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-stack">
-                        <h2>How I think</h2>
-                        <div class="tag-cluster">
-                            <span class="tag">Analytical</span>
-                            <span class="tag">Systems-minded</span>
-                            <span class="tag">Curious</span>
-                            <span class="tag">Story-driven</span>
-                            <span class="tag">Practical</span>
-                            <span class="tag">Cross-functional</span>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-        </section>
-
-        <section id="story">
-            <div class="page-shell">
-                <div class="section-top reveal">
-                    <div>
-                        <span class="section-label">The Story</span>
-                        <h2 class="section-title">A career shaped by curiosity, then sharpened by focus.</h2>
-                    </div>
-                </div>
-                <div class="story-grid">
-                    <article class="section-card story-copy reveal">
-                        <p class="story-quote">I did not start in AI. I got there by following patterns across engineering, teaching, operations, and problem-solving.</p>
-                        <p class="section-intro">
-                            Mechanical engineering trained me to think structurally. Teaching thousands of students taught me how to explain hard ideas clearly. Building in data and ML gave me the tools to turn those instincts into systems, models, and decisions. The result is a portfolio built on transfer: I move between disciplines without losing rigor.
-                        </p>
-                        <div class="story-columns">
-                            <div class="signal-list">
-                                <div class="signal-item">
-                                    <strong>Breadth with intent</strong>
-                                    I can move from dashboards to pipelines to model workflows without treating them as separate worlds.
-                                </div>
-                                <div class="signal-item">
-                                    <strong>Depth where it counts</strong>
-                                    Machine learning and AI engineering are the areas where I want to keep compounding.
-                                </div>
-                            </div>
-                            <div class="signal-list">
-                                <div class="signal-item">
-                                    <strong>Communication as leverage</strong>
-                                    Teaching experience means I naturally think about adoption, clarity, and trust.
-                                </div>
-                                <div class="signal-item">
-                                    <strong>Curiosity outside work</strong>
-                                    Music and trivia are not side notes. They reflect rhythm, memory, listening, and synthesis.
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <aside class="quote-card reveal">
-                        <h3>Working thesis</h3>
-                        <p class="story-quote">Generalist enough to see the whole system. Specialist enough to improve the hardest part.</p>
-                        <p>
-                            The strongest portfolios do not just list skills. They make a coherent argument. Mine is simple: I connect analysis, modeling, and engineering, then bring the result back to human understanding.
-                        </p>
-                    </aside>
-                </div>
-            </div>
-        </section>
-
-        <section id="work">
-            <div class="page-shell">
-                <div class="section-top reveal">
-                    <div>
-                        <span class="section-label">Selected Work</span>
-                        <h2 class="section-title">Projects that show range, not noise.</h2>
-                    </div>
-                </div>
-                <div class="feature-grid">
-                    <article class="feature-card reveal">
-                        <div class="card-topline">
-                            <span class="card-kicker">Machine Learning + Geospatial</span>
-                            <span>2025</span>
-                        </div>
-                        <h3>Myanmar Earthquake Change Detection</h3>
-                        <p>
-                            A reproducible geospatial ML pipeline using Sentinel-2 imagery and OpenStreetMap features to detect impact zones after the March 28, 2025 Myanmar earthquake. This is the kind of work I want more of: technically grounded, socially relevant, and built for action.
-                        </p>
-                        <div class="tag-cluster">
-                            <span class="tag">Remote Sensing</span>
-                            <span class="tag">Change Detection</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Folium</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nithingm/Earthquake-Change-Detector" target="_blank" rel="noreferrer">View repository</a>
-                        </div>
-                    </article>
-
-                    <article class="feature-card reveal">
-                        <div class="card-topline">
-                            <span class="card-kicker">AI Engineering</span>
-                            <span>2026</span>
-                        </div>
-                        <h3>Narrator AI</h3>
-                        <p>
-                            A gothic character chat app with support for multiple model providers including OpenAI, Claude, DeepSeek, and local Ollama models. It shows the engineering side of my interests: orchestration, interface, model choice, and the product layer around AI.
-                        </p>
-                        <div class="tag-cluster">
-                            <span class="tag">Next.js</span>
-                            <span class="tag">Express</span>
-                            <span class="tag">Multi-model</span>
-                            <span class="tag">Local-first AI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nithingm/narrator-ai" target="_blank" rel="noreferrer">View repository</a>
-                        </div>
-                    </article>
-
-                    <article class="feature-card reveal">
-                        <div class="card-topline">
-                            <span class="card-kicker">Data Pipeline</span>
-                            <span>2025</span>
-                        </div>
-                        <h3>Satellite Data Downloader</h3>
-                        <p>
-                            A reproducible workflow for fetching pre-event and post-event Sentinel-2 imagery from the Copernicus Data Space Ecosystem. Useful projects are often the quiet ones that make serious analysis possible. This one sits exactly there.
-                        </p>
-                        <div class="tag-cluster">
-                            <span class="tag">EODAG</span>
-                            <span class="tag">Automation</span>
-                            <span class="tag">Reproducibility</span>
-                            <span class="tag">Disaster Response</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nithingm/Satellite-Data-Downloader" target="_blank" rel="noreferrer">View repository</a>
-                        </div>
-                    </article>
-
-                    <article class="feature-card reveal">
-                        <div class="card-topline">
-                            <span class="card-kicker">Analytics + Visualization</span>
-                            <span>2025</span>
-                        </div>
-                        <h3>Weather Dashboard</h3>
-                        <p>
-                            A streaming weather dashboard built with Azure Functions, Event Hub, Microsoft Fabric, and Power BI. This project represents the analytics end of my toolkit: ingestion, transformation, infrastructure, and clear reporting.
-                        </p>
-                        <div class="tag-cluster">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Microsoft Fabric</span>
-                            <span class="tag">Azure</span>
-                            <span class="tag">Data Streaming</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nithingm/Weather-Dashboard" target="_blank" rel="noreferrer">View repository</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="journey">
-            <div class="page-shell">
-                <div class="section-top reveal">
-                    <div>
-                        <span class="section-label">Journey</span>
-                        <h2 class="section-title">The throughline is not job title. It is pattern recognition.</h2>
-                    </div>
-                </div>
-                <div class="timeline">
-                    <article class="timeline-card reveal">
-                        <div class="timeline-period">2023 - Present</div>
-                        <div>
-                            <h3 class="timeline-title">Master's in Machine Learning, University of Arizona</h3>
-                            <p>
-                                Formalized my shift into machine learning with graduate study and a 3.89 GPA. This phase turned curiosity into a disciplined technical foundation.
-                            </p>
-                        </div>
-                    </article>
-                    <article class="timeline-card reveal">
-                        <div class="timeline-period">2017 - 2023</div>
-                        <div>
-                            <h3 class="timeline-title">Mathematics Coach, BYJU'S</h3>
-                            <p>
-                                Taught more than 3,000 IIT-JEE aspirants, helped shape curriculum, and contributed to faculty hiring across 12 centers. It built the communication muscle that now shapes how I think about model usability and product clarity.
-                            </p>
-                        </div>
-                    </article>
-                    <article class="timeline-card reveal">
-                        <div class="timeline-period">2015 - 2017</div>
-                        <div>
-                            <h3 class="timeline-title">Co-Founder, Gulpp</h3>
-                            <p>
-                                Built a food-tech startup around delivery efficiency and marketing experimentation. The startup chapter taught me bias for action, ambiguity tolerance, and how ideas survive contact with reality.
-                            </p>
-                        </div>
-                    </article>
-                    <article class="timeline-card reveal">
-                        <div class="timeline-period">2014 - 2015</div>
-                        <div>
-                            <h3 class="timeline-title">Consultant, Capgemini</h3>
-                            <p>
-                                Worked on big-data migration projects. Early exposure to enterprise systems gave me a practical sense for scale, structure, and the unglamorous work needed to make complex systems useful.
-                            </p>
-                        </div>
-                    </article>
-                    <article class="timeline-card reveal">
-                        <div class="timeline-period">2010 - 2014</div>
-                        <div>
-                            <h3 class="timeline-title">B.E. in Mechanical Engineering, BITS Pilani</h3>
-                            <p>
-                                Learned to reason from first principles, work across constraints, and treat technical rigor as non-negotiable.
-                            </p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="beyond">
-            <div class="page-shell">
-                <div class="section-top reveal">
-                    <div>
-                        <span class="section-label">Beyond Work</span>
-                        <h2 class="section-title">The side interests are part of the signal.</h2>
-                    </div>
-                </div>
-                <div class="signals-grid">
-                    <article class="signal-card reveal">
-                        <span class="signal-pill">Music</span>
-                        <h3>Rhythm, attention, feel</h3>
-                        <p>
-                            Music keeps me honest about timing, structure, and emotional tone. It is another form of pattern recognition, just expressed through sound instead of code or charts.
-                        </p>
-                    </article>
-                    <article class="signal-card reveal">
-                        <span class="signal-pill">Trivia</span>
-                        <h3>Recall, connection, surprise</h3>
-                        <p>
-                            Trivia reflects the part of me that loves collecting fragments and linking them fast. It feeds breadth, and breadth often unlocks better questions.
-                        </p>
-                    </article>
-                    <article class="signal-card reveal">
-                        <span class="signal-pill">Why it matters</span>
-                        <h3>A wider surface area for insight</h3>
-                        <p>
-                            The best ideas often arrive when fields overlap. That is the real meaning of "jack of all trades, mastering a few" for me: not distraction, but synthesis.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="page-shell footer-grid">
-                <article class="footer-card reveal">
-                    <span class="section-label">What I am looking for</span>
-                    <h3 style="margin-top: 1rem; font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1.08;">
-                        Work that sits between analysis, intelligence, and execution.
-                    </h3>
-                    <p>
-                        I am most energized by problems that move from messy information to clear decisions: analytics systems, applied ML, AI products, and technically ambitious projects with real-world stakes.
-                    </p>
                 </article>
 
-                <article class="footer-card reveal">
-                    <span class="section-label">Contact</span>
-                    <div class="contact-list">
-                        <a class="contact-item" href="mailto:nithingm33@gmail.com">
-                            <span>nithingm33@gmail.com</span>
-                            <span>Email</span>
-                        </a>
-                        <a class="contact-item" href="https://www.linkedin.com/in/nithin-george-87583137/" target="_blank" rel="noreferrer">
-                            <span>LinkedIn</span>
-                            <span>Professional profile</span>
-                        </a>
-                        <a class="contact-item" href="https://github.com/nithingm" target="_blank" rel="noreferrer">
-                            <span>GitHub</span>
-                            <span>Code and experiments</span>
-                        </a>
-                        <div class="contact-item">
-                            <span>Tucson, Arizona</span>
-                            <span>Based in the US</span>
-                        </div>
+                <section class="map-stage reveal" aria-label="Connected map of skills and interests">
+                    <div class="map-lines" aria-hidden="true">
+                        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M19 20 C31 18, 38 33, 43 45" stroke="rgba(23,33,43,0.16)" stroke-width="0.55" fill="none"/>
+                            <path d="M43 45 C51 43, 59 31, 63 21" stroke="rgba(23,33,43,0.16)" stroke-width="0.55" fill="none"/>
+                            <path d="M43 45 C55 48, 65 61, 71 68" stroke="rgba(23,33,43,0.16)" stroke-width="0.55" fill="none"/>
+                            <path d="M21 71 C28 61, 34 55, 43 45" stroke="rgba(23,33,43,0.16)" stroke-width="0.55" fill="none"/>
+                            <path d="M21 71 C33 77, 45 78, 53 80" stroke="rgba(23,33,43,0.16)" stroke-width="0.55" fill="none"/>
+                            <path d="M53 80 C62 78, 69 74, 71 68" stroke="rgba(23,33,43,0.16)" stroke-width="0.55" fill="none"/>
+                            <path d="M63 21 C73 22, 79 27, 82 34" stroke="rgba(23,33,43,0.16)" stroke-width="0.55" fill="none"/>
+                        </svg>
+                    </div>
+                    <button class="map-node map-node-1" type="button" data-size="md" data-tone="signal" data-map-node data-title="Data Analytics" data-copy="The layer where messy information becomes pattern, visibility, and decisions. Dashboards, flows, metrics, and narrative clarity start here.">
+                        <span><strong>Analytics</strong><span>pattern finding</span></span>
+                    </button>
+                    <button class="map-node map-node-2" type="button" data-size="md" data-tone="signal" data-map-node data-title="Data Science" data-copy="The investigation zone: framing questions, exploring structure, testing assumptions, and turning evidence into models or explanations.">
+                        <span><strong>Data Science</strong><span>inference</span></span>
+                    </button>
+                    <button class="map-node map-node-3" type="button" data-size="lg" data-tone="core" data-map-node data-title="Machine Learning" data-copy="One of the mastery zones. This is where theory, experimentation, and disciplined study come together for me most strongly.">
+                        <span><strong>Machine Learning</strong><span>mastery zone</span></span>
+                    </button>
+                    <button class="map-node map-node-4" type="button" data-size="lg" data-tone="core" data-map-node data-title="AI Engineering" data-copy="The second mastery zone. Models matter, but orchestration, interfaces, and useful systems matter too. I care about shipping the full experience.">
+                        <span><strong>AI Engineering</strong><span>mastery zone</span></span>
+                    </button>
+                    <button class="map-node map-node-5" type="button" data-size="md" data-tone="signal" data-map-node data-title="Math Teaching" data-copy="This is not side history. Teaching math to thousands of students shaped how I explain abstraction, design learning paths, and make hard ideas usable.">
+                        <span><strong>Math Teaching</strong><span>clarity engine</span></span>
+                    </button>
+                    <button class="map-node map-node-6" type="button" data-size="sm" data-tone="signal" data-map-node data-title="Music + Art" data-copy="Music and creative interests sharpen rhythm, feel, timing, and visual intuition. They show up in how I pace and present technical ideas.">
+                        <span><strong>Music / Art</strong><span>creative fuel</span></span>
+                    </button>
+                    <button class="map-node map-node-7" type="button" data-size="sm" data-tone="signal" data-map-node data-title="Trivia + Curiosity" data-copy="Trivia is broad recall with delight. It reflects the part of me that loves connections, hidden facts, and lateral jumps between domains.">
+                        <span><strong>Trivia</strong><span>curiosity fuel</span></span>
+                    </button>
+                    <span class="orbit-dot orbit-1" aria-hidden="true"></span>
+                    <span class="orbit-dot orbit-2" aria-hidden="true"></span>
+                    <span class="orbit-dot orbit-3" aria-hidden="true"></span>
+                    <div class="map-preview">
+                        <span class="section-label">Active Signal</span>
+                        <h2 style="margin:0.8rem 0 0;" data-map-title>Machine Learning</h2>
+                        <p data-map-copy></p>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="page-shell">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="section-label">Orientation</span>
+                        <h2 class="section-title">This site is built like a system, not a resume.</h2>
+                    </div>
+                </div>
+                <div class="three-grid">
+                    <article class="signal-card reveal">
+                        <span class="project-badge">About</span>
+                        <h3>The pivots behind the work</h3>
+                        <p class="card-copy">Mechanical engineering, enterprise systems, startup chaos, math teaching, and graduate ML work all connect through one thing: pattern explanation.</p>
+                        <a class="button" href="about.html">Go to About</a>
+                    </article>
+                    <article class="signal-card reveal">
+                        <span class="project-badge">Work</span>
+                        <h3>Proof with depth</h3>
+                        <p class="card-copy">The project stories move from learning systems to geospatial ML to AI product building. mlnop.xyz leads because it connects your teaching and ML identities directly.</p>
+                        <a class="button" href="work.html">Go to Work</a>
+                    </article>
+                    <article class="signal-card reveal">
+                        <span class="project-badge">Fun</span>
+                        <h3>Curiosity with structure</h3>
+                        <p class="card-copy">Music, math play, trivia, and art are treated as part of the same engine that drives the technical work: breadth, rhythm, memory, and synthesis.</p>
+                        <a class="button" href="fun.html">Go to Fun</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="page-shell split-grid">
+                <article class="quote-band reveal">
+                    <span class="section-label">Current Focus</span>
+                    <p class="quote-line">Learning systems, applied ML, AI products, and technically ambitious work that still needs human clarity.</p>
+                    <p class="supporting-copy">The throughline is not "I do many things." It is "I connect difficult things and make them workable."</p>
+                </article>
+                <article class="story-panel reveal">
+                    <span class="section-label">Fast Proof</span>
+                    <div class="chip-row">
+                        <span class="chip">Machine learning graduate study</span>
+                        <span class="chip">3,000+ math students taught</span>
+                        <span class="chip">AI product experimentation</span>
+                        <span class="chip">Analytics and data pipelines</span>
+                    </div>
+                    <p class="body-copy">If someone spends ten seconds here, they should leave with the right read: broad range, strong learning instincts, unusual teaching depth, and serious momentum around ML and AI engineering.</p>
+                    <div class="button-row">
+                        <button class="button button-primary" type="button" data-contact-open>Open contact</button>
                     </div>
                 </article>
             </div>
         </section>
     </main>
-
-    <script>
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("is-visible");
-                    }
-                });
-            },
-            {
-                threshold: 0.18
-            }
-        );
-
-        document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
-    </script>
+    <div data-site-footer></div>
+    <script src="site.js"></script>
 </body>
 </html>
